@@ -8,46 +8,39 @@ help: ## Show this help message
 	@echo "Targets:"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-# Development (uses local environment)
+# Development (Vite auto-loads .env.development)
 start: ## Start dev server and Firebase emulators
-	@cp .env.local .env
-	@echo "Starting Voltix development environment (local)..."
+	@echo "Starting Voltix development environment..."
 	@trap 'kill 0' EXIT; \
 	firebase emulators:start & \
 	sleep 3 && npm run dev & \
 	wait
 
-dev: ## Start only the Vite dev server (local env)
-	@cp .env.local .env
+dev: ## Start only the Vite dev server
 	npm run dev
 
 emulators: ## Start only Firebase emulators
-	@cp .env.local .env
 	firebase emulators:start
 
-# Build
+# Build (Vite auto-loads .env.production)
 build: ## Build frontend and functions for production
-	@cp .env.prod .env
 	npm run build
 	npm --prefix functions run build
 
-build-frontend: ## Build only frontend (prod env)
-	@cp .env.prod .env
+build-frontend: ## Build only frontend
 	npm run build
 
 build-functions: ## Build only Cloud Functions
 	npm --prefix functions run build
 
-# Deploy (uses production environment)
+# Deploy
 deploy: build ## Build and deploy everything to Firebase
 	firebase deploy
 
 deploy-functions: build-functions ## Deploy only Cloud Functions
 	firebase deploy --only functions
 
-deploy-hosting: ## Build and deploy only hosting
-	@cp .env.prod .env
-	npm run build
+deploy-hosting: build-frontend ## Build and deploy only hosting
 	firebase deploy --only hosting
 
 deploy-firestore: ## Deploy only Firestore rules and indexes
@@ -57,9 +50,7 @@ deploy-storage: ## Deploy only Storage rules
 	firebase deploy --only storage
 
 # Other
-preview: ## Preview production build locally
-	@cp .env.prod .env
-	npm run build
+preview: build-frontend ## Preview production build locally
 	npm run preview
 
 install: ## Install all dependencies
