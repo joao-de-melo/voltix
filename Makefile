@@ -8,32 +8,32 @@ help: ## Show this help message
 	@echo "Targets:"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-# Development (Vite auto-loads .env.development)
+# Development (uses .env.development)
 start: ## Start dev server and Firebase emulators
 	@echo "Starting Voltix development environment..."
 	@trap 'kill 0' EXIT; \
 	firebase emulators:start & \
-	sleep 3 && npm run dev & \
+	sleep 3 && npx vite --mode development & \
 	wait
 
 dev: ## Start only the Vite dev server
-	npm run dev
+	npx vite --mode development
 
 emulators: ## Start only Firebase emulators
 	firebase emulators:start
 
-# Build (Vite auto-loads .env.production)
+# Build (uses .env.production)
 build: ## Build frontend and functions for production
-	npm run build
+	npx tsc -b && npx vite build --mode production
 	npm --prefix functions run build
 
 build-frontend: ## Build only frontend
-	npm run build
+	npx tsc -b && npx vite build --mode production
 
 build-functions: ## Build only Cloud Functions
 	npm --prefix functions run build
 
-# Deploy
+# Deploy (always uses production)
 deploy: build ## Build and deploy everything to Firebase
 	firebase deploy
 
@@ -51,7 +51,7 @@ deploy-storage: ## Deploy only Storage rules
 
 # Other
 preview: build-frontend ## Preview production build locally
-	npm run preview
+	npx vite preview
 
 install: ## Install all dependencies
 	npm install
