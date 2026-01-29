@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useSearchParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -22,7 +22,11 @@ import { Separator } from "@/components/ui/separator";
 export function LoginForm() {
   const { t } = useTranslation(['auth', 'validation']);
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
+
+  // Get return URL from query params, default to dashboard
+  const returnUrl = searchParams.get('returnUrl') || '/dashboard';
 
   const loginSchema = z.object({
     email: z.string().email(t('validation:email.invalid')),
@@ -43,7 +47,7 @@ export function LoginForm() {
     setIsLoading(true);
     try {
       await signInWithEmail(data.email, data.password);
-      navigate("/dashboard");
+      navigate(returnUrl);
     } catch (error: any) {
       console.error("Login error:", error);
       toast.error(error.message || t('auth:login.errors.failed'));
@@ -56,7 +60,7 @@ export function LoginForm() {
     setIsLoading(true);
     try {
       await signInWithGoogle();
-      navigate("/dashboard");
+      navigate(returnUrl);
     } catch (error: any) {
       console.error("Google sign in error:", error);
       toast.error(error.message || t('auth:login.errors.failed'));

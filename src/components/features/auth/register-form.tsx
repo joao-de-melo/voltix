@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useSearchParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -22,7 +22,11 @@ import { Separator } from "@/components/ui/separator";
 export function RegisterForm() {
   const { t } = useTranslation(['auth', 'validation']);
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
+
+  // Get return URL from query params, default to onboarding for new users
+  const returnUrl = searchParams.get('returnUrl') || '/onboarding';
 
   const registerSchema = z.object({
     name: z.string().min(2, t('validation:name.minLength', { count: 2 })),
@@ -51,7 +55,7 @@ export function RegisterForm() {
     try {
       await signUpWithEmail(data.email, data.password, data.name);
       toast.success(t('auth:register.success'));
-      navigate("/onboarding");
+      navigate(returnUrl);
     } catch (error: any) {
       console.error("Registration error:", error);
       toast.error(error.message || t('auth:register.errors.failed'));
@@ -64,7 +68,7 @@ export function RegisterForm() {
     setIsLoading(true);
     try {
       await signInWithGoogle();
-      navigate("/onboarding");
+      navigate(returnUrl);
     } catch (error: any) {
       console.error("Google sign in error:", error);
       toast.error(error.message || t('auth:login.errors.failed'));

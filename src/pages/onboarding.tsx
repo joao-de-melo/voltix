@@ -1,8 +1,27 @@
+import { useNavigate } from "react-router-dom";
+import { LogOut } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { OnboardingForm } from "@/components/features/auth";
+import { signOut } from "@/lib/firebase/auth";
+import { Button } from "@/components/ui/button";
 
 export function OnboardingPage() {
+  const { t } = useTranslation(["common"]);
+  const navigate = useNavigate();
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate("/login");
+  };
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted/50 p-4">
+      <div className="absolute top-4 right-4">
+        <Button variant="ghost" size="sm" onClick={handleSignOut}>
+          <LogOut className="mr-2 h-4 w-4" />
+          {t("common:header.signOut")}
+        </Button>
+      </div>
       <div className="flex flex-col items-center space-y-6">
         <div className="flex items-center space-x-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
