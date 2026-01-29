@@ -113,10 +113,12 @@ export async function getInvitationByToken(
   token: string
 ): Promise<Invitation | null> {
   // Query across all invitations subcollections using collectionGroup
+  // Must include type='link' filter to satisfy Firestore security rules
   const invitationsQuery = query(
     collectionGroup(db, "invitations"),
     where("token", "==", token),
-    where("status", "==", "pending")
+    where("status", "==", "pending"),
+    where("type", "==", "link")
   );
 
   const snapshot = await getDocs(invitationsQuery);
