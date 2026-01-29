@@ -164,5 +164,11 @@ service cloud.firestore {
       allow read: if isAuthenticated();
       allow write: if false; // Managed by admin only
     }
+
+    // Collection group query rule for link invitations
+    // This allows authenticated users to query invitations by token across all orgs
+    match /{path=**}/invitations/{invitationId} {
+      allow read: if isAuthenticated() && resource.data.type == 'link';
+    }
   }
 }
