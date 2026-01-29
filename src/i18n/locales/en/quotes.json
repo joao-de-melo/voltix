@@ -1,0 +1,170 @@
+{
+  "title": "Quotes",
+  "description": "Manage your solar system quotes",
+  "newQuote": "New Quote",
+  "quickQuote": "Quick Quote",
+  "editQuote": "Edit Quote",
+  "viewQuote": "View Quote",
+  "quoteDetails": "Quote Details",
+  "empty": {
+    "title": "No quotes yet",
+    "description": "Create your first quote to get started.",
+    "action": "New Quote"
+  },
+  "status": {
+    "draft": "Draft",
+    "pending_approval": "Pending Approval",
+    "approved": "Approved",
+    "sent": "Sent",
+    "viewed": "Viewed",
+    "accepted": "Accepted",
+    "rejected": "Rejected",
+    "expired": "Expired"
+  },
+  "form": {
+    "customer": "Customer",
+    "customerPlaceholder": "Select a customer",
+    "validUntil": "Valid Until",
+    "notes": "Notes",
+    "notesPlaceholder": "Additional notes for the customer",
+    "internalNotes": "Internal Notes",
+    "internalNotesPlaceholder": "Internal notes (not visible to customer)"
+  },
+  "customerSelection": {
+    "title": "Customer Information",
+    "description": "Link to an existing customer or enter contact details manually",
+    "selectCustomer": "Select Customer",
+    "selectCustomerDescription": "Choose a customer for this quote",
+    "selectCustomerPlaceholder": "Select customer...",
+    "selectCustomerOptional": "Select customer (optional)...",
+    "searchCustomers": "Search customers...",
+    "noCustomerFound": "No customer found.",
+    "noCustomersYet": "No customers found",
+    "clearSelection": "Clear selection",
+    "proceedWithoutCustomer": "You can proceed without selecting a customer. The quote will be created as a draft.",
+    "tabs": {
+      "existing": "Existing Customer",
+      "manual": "Manual Entry"
+    },
+    "manualEntry": {
+      "description": "Enter basic contact information. You can link this quote to a customer later."
+    }
+  },
+  "contactInfo": {
+    "name": "Name",
+    "namePlaceholder": "Contact name",
+    "nameRequired": "Name *",
+    "email": "Email",
+    "emailPlaceholder": "email@example.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+351 900 000 000",
+    "company": "Company (optional)",
+    "companyPlaceholder": "Company name"
+  },
+  "siteSelection": {
+    "title": "Select Installation Site",
+    "description": "Choose the site where the system will be installed (optional)",
+    "selectSite": "Select site (optional)...",
+    "searchSites": "Search sites...",
+    "noSiteFound": "No site found.",
+    "noSitesForCustomer": "No sites registered for this customer",
+    "continueWithoutSite": "You can continue without a site or add one later",
+    "roof": "Roof",
+    "orientation": "Orientation",
+    "shading": "Shading",
+    "energyProfileFound": "Energy Profile Found",
+    "annualConsumption": "Annual consumption",
+    "contracted": "Contracted"
+  },
+  "sections": {
+    "equipment": "Equipment",
+    "installation": "Installation",
+    "accessories": "Accessories",
+    "addSection": "Add Section",
+    "sectionName": "Section Name"
+  },
+  "lineItems": {
+    "product": "Product",
+    "description": "Description",
+    "quantity": "Qty",
+    "unitPrice": "Unit Price",
+    "discount": "Discount",
+    "tax": "Tax",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "addItem": "Add Item"
+  },
+  "totals": {
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "tax": "Tax",
+    "total": "Total"
+  },
+  "actions": {
+    "send": "Send Quote",
+    "sending": "Sending...",
+    "approve": "Approve",
+    "reject": "Reject",
+    "duplicate": "Duplicate",
+    "download": "Download PDF",
+    "preview": "Preview"
+  },
+  "dashboard": {
+    "welcome": "Welcome back! Here's what's happening with {{organization}}.",
+    "totalQuotes": "Total Quotes",
+    "pendingQuotes": "Pending Quotes",
+    "totalCustomers": "Total Customers",
+    "totalRevenue": "Total Revenue",
+    "recentQuotes": "Recent Quotes",
+    "recentActivity": "Your most recent quote activity",
+    "noQuotes": "No quotes yet. Create your first quote to get started."
+  },
+  "list": {
+    "searchPlaceholder": "Search quotes...",
+    "columns": {
+      "number": "Quote #",
+      "customer": "Customer",
+      "total": "Total",
+      "status": "Status",
+      "createdAt": "Created",
+      "validUntil": "Valid Until"
+    }
+  },
+  "delete": {
+    "title": "Delete Quote",
+    "description": "Are you sure you want to delete this quote? This action cannot be undone.",
+    "success": "Quote deleted successfully",
+    "error": "Failed to delete quote"
+  },
+  "save": {
+    "success": "Quote saved successfully",
+    "error": "Failed to save quote"
+  },
+  "send": {
+    "success": "Quote sent successfully",
+    "error": "Failed to send quote"
+  },
+  "systemSummary": {
+    "title": "System Summary",
+    "totalPanels": "Total Panels",
+    "totalPower": "Total Power",
+    "batteryCapacity": "Battery Capacity",
+    "inverterCapacity": "Inverter Capacity",
+    "estimatedProduction": "Est. Annual Production"
+  },
+  "sizing": {
+    "title": "System Sizing",
+    "annualConsumption": "Annual Consumption (kWh)",
+    "contractedPower": "Contracted Power (kVA)",
+    "roofType": "Roof Type",
+    "roofTypes": {
+      "tile": "Tile",
+      "metal": "Metal",
+      "flat": "Flat",
+      "ground": "Ground Mount"
+    },
+    "includeBattery": "Include Battery Storage",
+    "calculate": "Calculate System",
+    "recommended": "Recommended System"
+  }
+}

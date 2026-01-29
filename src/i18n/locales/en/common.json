@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "customers": "Customers",
+    "products": "Products",
+    "quotes": "Quotes",
+    "settings": "Settings"
+  },
+  "header": {
+    "organizations": "Organizations",
+    "createOrganization": "Create Organization",
+    "selectOrganization": "Select Organization",
+    "myAccount": "My Account",
+    "profile": "Profile",
+    "settings": "Settings",
+    "signOut": "Sign out"
+  },
+  "buttons": {
+    "save": "Save",
+    "saveChanges": "Save Changes",
+    "saving": "Saving...",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "deleting": "Deleting...",
+    "confirm": "Confirm",
+    "create": "Create",
+    "creating": "Creating...",
+    "edit": "Edit",
+    "add": "Add",
+    "remove": "Remove",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "viewAll": "View all",
+    "loading": "Loading..."
+  },
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "pending": "Pending",
+    "completed": "Completed",
+    "failed": "Failed"
+  },
+  "errors": {
+    "generic": "Something went wrong",
+    "notFound": "Not found",
+    "unauthorized": "Unauthorized",
+    "forbidden": "Access denied",
+    "networkError": "Network error. Please check your connection.",
+    "tryAgain": "Please try again"
+  },
+  "empty": {
+    "noData": "No data available",
+    "noResults": "No results found"
+  },
+  "confirm": {
+    "deleteTitle": "Are you sure?",
+    "deleteDescription": "This action cannot be undone.",
+    "unsavedChanges": "You have unsaved changes. Are you sure you want to leave?"
+  },
+  "pagination": {
+    "showing": "Showing {{from}} to {{to}} of {{total}} results",
+    "page": "Page {{current}} of {{total}}"
+  }
+}

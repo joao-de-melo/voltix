@@ -1,0 +1,56 @@
+{
+  "title": "Clientes",
+  "description": "Gerir a sua base de dados de clientes",
+  "newCustomer": "Novo Cliente",
+  "editCustomer": "Editar Cliente",
+  "addCustomer": "Adicionar Cliente",
+  "customerDetails": "Detalhes do Cliente",
+  "empty": {
+    "title": "Sem clientes",
+    "description": "Adicione o seu primeiro cliente para começar a criar orçamentos.",
+    "action": "Adicionar Cliente"
+  },
+  "form": {
+    "name": "Nome",
+    "namePlaceholder": "Introduza o nome do cliente",
+    "email": "Email",
+    "emailPlaceholder": "cliente@exemplo.com",
+    "phone": "Telefone",
+    "phonePlaceholder": "+351 912 345 678",
+    "company": "Empresa",
+    "companyPlaceholder": "Nome da empresa (opcional)",
+    "taxId": "NIF",
+    "taxIdPlaceholder": "123456789",
+    "address": "Morada",
+    "addressPlaceholder": "Endereço",
+    "city": "Cidade",
+    "cityPlaceholder": "Cidade",
+    "postalCode": "Código Postal",
+    "postalCodePlaceholder": "1234-567",
+    "country": "País",
+    "countryPlaceholder": "Portugal",
+    "notes": "Notas",
+    "notesPlaceholder": "Notas adicionais sobre este cliente"
+  },
+  "list": {
+    "searchPlaceholder": "Pesquisar clientes...",
+    "columns": {
+      "name": "Nome",
+      "email": "Email",
+      "phone": "Telefone",
+      "company": "Empresa",
+      "quotesCount": "Orçamentos",
+      "createdAt": "Criado"
+    }
+  },
+  "delete": {
+    "title": "Eliminar Cliente",
+    "description": "Tem a certeza que quer eliminar este cliente? Esta ação não pode ser revertida.",
+    "success": "Cliente eliminado com sucesso",
+    "error": "Falha ao eliminar cliente"
+  },
+  "save": {
+    "success": "Cliente guardado com sucesso",
+    "error": "Falha ao guardar cliente"
+  }
+}

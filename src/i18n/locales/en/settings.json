@@ -1,0 +1,233 @@
+{
+  "title": "Settings",
+  "description": "Manage your account and organization settings",
+  "nav": {
+    "profile": "Profile",
+    "account": "Account",
+    "preferences": "Preferences",
+    "organization": "Organization",
+    "general": "General",
+    "billing": "Billing",
+    "branding": "Branding",
+    "other": "Other",
+    "team": "Team",
+    "quoteSettings": "Quote Settings"
+  },
+  "tabs": {
+    "profile": "Profile",
+    "organization": "Organization",
+    "team": "Team",
+    "billing": "Billing"
+  },
+  "account": {
+    "title": "Account Settings",
+    "description": "Manage your personal account information",
+    "personalInfo": "Personal Information",
+    "displayName": "Display Name",
+    "email": "Email",
+    "emailCannotBeChanged": "Email cannot be changed",
+    "save": {
+      "success": "Account updated successfully",
+      "error": "Failed to update account"
+    }
+  },
+  "preferences": {
+    "title": "Preferences",
+    "description": "Customize your experience and notification settings",
+    "appearance": "Appearance",
+    "theme": "Theme",
+    "themes": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "languageRegion": "Language & Region",
+    "languages": {
+      "pt-PT": "Portuguese (Portugal)",
+      "en-US": "English (US)",
+      "es-ES": "Spanish (Spain)",
+      "pt": "Portuguese",
+      "en": "English"
+    },
+    "notifications": "Notifications",
+    "notificationsDescription": "Configure how you receive notifications",
+    "emailNotifications": "Email Notifications",
+    "emailNotificationsDescription": "Receive notifications via email",
+    "quoteUpdates": "Quote Updates",
+    "quoteUpdatesDescription": "Get notified when quotes are viewed or accepted",
+    "teamActivity": "Team Activity",
+    "teamActivityDescription": "Get notified about team member activity",
+    "save": {
+      "success": "Preferences updated successfully",
+      "error": "Failed to update preferences"
+    }
+  },
+  "general": {
+    "title": "General Settings",
+    "description": "Manage your organization's basic information",
+    "generalInfo": "General Information",
+    "name": "Organization Name",
+    "taxId": "Tax ID (NIF)",
+    "region": "Region",
+    "regionDescription": "Affects currency and tax settings",
+    "contactInfo": "Contact Information",
+    "contactEmail": "Contact Email",
+    "contactPhone": "Contact Phone",
+    "address": "Address",
+    "street": "Street Address",
+    "city": "City",
+    "postalCode": "Postal Code",
+    "country": "Country",
+    "save": {
+      "success": "Organization settings updated successfully",
+      "error": "Failed to update organization settings"
+    }
+  },
+  "billing": {
+    "title": "Billing & Subscription",
+    "description": "View your subscription and usage information",
+    "currentPlan": "Current Plan",
+    "plan": "Plan",
+    "status": "Status",
+    "plans": {
+      "free": "Free",
+      "starter": "Starter",
+      "professional": "Professional",
+      "enterprise": "Enterprise"
+    },
+    "statuses": {
+      "active": "Active",
+      "trialing": "Trialing",
+      "past_due": "Past Due",
+      "canceled": "Canceled"
+    },
+    "renewsOn": "Renews On",
+    "usage": "Usage",
+    "quotesUsed": "{{used}} of {{limit}} quotes used",
+    "usageWarning": "You're approaching your quote limit. Consider upgrading your plan.",
+    "upgradePlan": "Upgrade Plan",
+    "manageBilling": "Manage Billing"
+  },
+  "branding": {
+    "title": "Branding",
+    "description": "Customize the appearance of your quotes and documents",
+    "colors": "Colors",
+    "primaryColor": "Primary Color",
+    "primaryColorDescription": "Main color used in headers and buttons",
+    "secondaryColor": "Secondary Color",
+    "secondaryColorDescription": "Accent color used for highlights",
+    "quoteCustomization": "Quote Customization",
+    "headerText": "Header Text",
+    "headerTextPlaceholder": "Text displayed at the top of quotes",
+    "headerTextDescription": "Custom text shown in the header of your quotes",
+    "footerText": "Footer Text",
+    "footerTextPlaceholder": "Text displayed at the bottom of quotes",
+    "footerTextDescription": "Custom text shown in the footer of your quotes",
+    "termsAndConditions": "Terms & Conditions",
+    "termsAndConditionsPlaceholder": "Enter your terms and conditions here...",
+    "termsAndConditionsDescription": "Default terms and conditions included in your quotes",
+    "save": {
+      "success": "Branding settings updated successfully",
+      "error": "Failed to update branding settings"
+    }
+  },
+  "profile": {
+    "title": "Profile Settings",
+    "description": "Manage your personal profile and preferences",
+    "personalInfo": "Personal Information",
+    "displayName": "Display Name",
+    "email": "Email",
+    "emailCannotBeChanged": "Email cannot be changed",
+    "preferences": "Preferences",
+    "theme": "Theme",
+    "themes": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "languageRegion": "Language & Region",
+    "languages": {
+      "pt-PT": "Portuguese (Portugal)",
+      "en-US": "English (US)",
+      "es-ES": "Spanish (Spain)",
+      "pt": "Portuguese",
+      "en": "English"
+    },
+    "notifications": "Notifications",
+    "notificationsDescription": "Configure how you receive notifications",
+    "emailNotifications": "Email Notifications",
+    "emailNotificationsDescription": "Receive notifications via email",
+    "quoteUpdates": "Quote Updates",
+    "quoteUpdatesDescription": "Get notified when quotes are viewed or accepted",
+    "teamActivity": "Team Activity",
+    "teamActivityDescription": "Get notified about team member activity",
+    "save": {
+      "success": "Profile updated successfully",
+      "error": "Failed to update profile"
+    }
+  },
+  "organization": {
+    "title": "Organization Settings",
+    "description": "Manage your organization's details and preferences",
+    "generalInfo": "General Information",
+    "name": "Organization Name",
+    "slug": "URL Slug",
+    "region": "Region",
+    "taxId": "Tax ID (NIF)",
+    "quoteSettings": "Quote Settings",
+    "quotePrefix": "Quote Prefix",
+    "quotePrefixDescription": "Prefix for quote numbers (e.g., QT-00001)",
+    "quoteStartNumber": "Starting Number",
+    "quoteValidityDays": "Default Validity (Days)",
+    "defaultTaxRate": "Default Tax Rate (%)",
+    "currency": "Currency",
+    "branding": "Branding",
+    "logo": "Logo",
+    "uploadLogo": "Upload Logo",
+    "primaryColor": "Primary Color",
+    "dangerZone": "Danger Zone",
+    "deleteOrganization": "Delete Organization",
+    "deleteOrganizationDescription": "Permanently delete this organization and all its data",
+    "save": {
+      "success": "Organization settings updated successfully",
+      "error": "Failed to update organization settings"
+    }
+  },
+  "team": {
+    "title": "Team Members",
+    "description": "Manage who has access to your organization",
+    "inviteMember": "Invite Member",
+    "email": "Email Address",
+    "role": "Role",
+    "roles": {
+      "owner": "Owner",
+      "admin": "Admin",
+      "member": "Member",
+      "viewer": "Viewer"
+    },
+    "status": {
+      "active": "Active",
+      "pending": "Pending",
+      "disabled": "Disabled"
+    },
+    "actions": {
+      "changeRole": "Change Role",
+      "remove": "Remove",
+      "resendInvite": "Resend Invite"
+    },
+    "empty": {
+      "title": "No team members",
+      "description": "Invite team members to collaborate on quotes"
+    },
+    "invite": {
+      "success": "Invitation sent successfully",
+      "error": "Failed to send invitation"
+    },
+    "remove": {
+      "title": "Remove Team Member",
+      "description": "Are you sure you want to remove this team member? They will lose access to this organization.",
+      "success": "Team member removed successfully",
+      "error": "Failed to remove team member"
+    }
+  }
+}

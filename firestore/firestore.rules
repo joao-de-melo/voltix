@@ -1,0 +1,161 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isMemberOfOrg(orgId) {
+      return isAuthenticated() &&
+        exists(/databases/$(database)/documents/organizations/$(orgId)/members/$(request.auth.uid));
+    }
+
+    function getMembership(orgId) {
+      return get(/databases/$(database)/documents/organizations/$(orgId)/members/$(request.auth.uid)).data;
+    }
+
+    function hasOrgRole(orgId, roles) {
+      return isMemberOfOrg(orgId) && getMembership(orgId).role in roles;
+    }
+
+    function hasOrgPermission(orgId, permission) {
+      let membership = getMembership(orgId);
+      let role = membership.role;
+
+      // Define role permissions
+      let ownerPerms = ['quotes:create', 'quotes:edit', 'quotes:delete', 'quotes:approve', 'quotes:send',
+        'customers:create', 'customers:edit', 'customers:delete',
+        'products:create', 'products:edit', 'products:delete',
+        'users:invite', 'users:manage', 'settings:edit', 'reports:view'];
+      let adminPerms = ownerPerms;
+      let managerPerms = ['quotes:create', 'quotes:edit', 'quotes:approve', 'quotes:send',
+        'customers:create', 'customers:edit',
+        'products:create', 'products:edit',
+        'users:invite', 'reports:view'];
+      let salesPerms = ['quotes:create', 'quotes:edit', 'quotes:send',
+        'customers:create', 'customers:edit', 'reports:view'];
+      let viewerPerms = ['reports:view'];
+
+      return (role == 'owner' && permission in ownerPerms) ||
+             (role == 'admin' && permission in adminPerms) ||
+             (role == 'manager' && permission in managerPerms) ||
+             (role == 'sales' && permission in salesPerms) ||
+             (role == 'viewer' && permission in viewerPerms);
+    }
+
+    // Users collection
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId);
+      allow update: if isOwner(userId);
+      allow delete: if false; // Users cannot be deleted
+
+      // User memberships subcollection
+      match /memberships/{orgId} {
+        allow read: if isOwner(userId);
+        // Allow user to create their own membership when creating an org (as owner)
+        allow create: if isOwner(userId) && request.resource.data.role == 'owner';
+        allow update, delete: if false; // Managed by Cloud Functions or org operations
+      }
+    }
+
+    // Organizations collection
+    match /organizations/{orgId} {
+      allow read: if isMemberOfOrg(orgId);
+      allow create: if isAuthenticated(); // Anyone can create an org
+      allow update: if hasOrgRole(orgId, ['owner', 'admin']);
+      allow delete: if hasOrgRole(orgId, ['owner']);
+
+      // Organization members subcollection
+      match /members/{userId} {
+        allow read: if isMemberOfOrg(orgId);
+        // Allow user to create their own membership as owner (for org creation)
+        // or allow existing admins/managers to add members
+        allow create: if (isOwner(userId) && request.resource.data.role == 'owner') ||
+                        hasOrgRole(orgId, ['owner', 'admin', 'manager']);
+        allow update: if hasOrgRole(orgId, ['owner', 'admin']);
+        allow delete: if hasOrgRole(orgId, ['owner', 'admin']) && userId != request.auth.uid;
+      }
+
+      // Invitations subcollection
+      match /invitations/{invitationId} {
+        allow read: if isMemberOfOrg(orgId) ||
+          (isAuthenticated() && resource.data.email == request.auth.token.email);
+        allow create: if hasOrgPermission(orgId, 'users:invite');
+        allow update: if hasOrgRole(orgId, ['owner', 'admin']) ||
+          (isAuthenticated() && resource.data.email == request.auth.token.email);
+        allow delete: if hasOrgRole(orgId, ['owner', 'admin']);
+      }
+
+      // Product categories subcollection
+      match /productCategories/{categoryId} {
+        allow read: if isMemberOfOrg(orgId);
+        allow create: if hasOrgPermission(orgId, 'products:create');
+        allow update: if hasOrgPermission(orgId, 'products:edit');
+        allow delete: if hasOrgPermission(orgId, 'products:delete');
+      }
+
+      // Products subcollection
+      match /products/{productId} {
+        allow read: if isMemberOfOrg(orgId);
+        allow create: if hasOrgPermission(orgId, 'products:create');
+        allow update: if hasOrgPermission(orgId, 'products:edit');
+        allow delete: if hasOrgPermission(orgId, 'products:delete');
+      }
+
+      // Customers subcollection
+      match /customers/{customerId} {
+        allow read: if isMemberOfOrg(orgId);
+        allow create: if hasOrgPermission(orgId, 'customers:create');
+        allow update: if hasOrgPermission(orgId, 'customers:edit');
+        allow delete: if hasOrgPermission(orgId, 'customers:delete');
+
+        // Customer sites subcollection
+        match /sites/{siteId} {
+          allow read: if isMemberOfOrg(orgId);
+          allow create: if hasOrgPermission(orgId, 'customers:create');
+          allow update: if hasOrgPermission(orgId, 'customers:edit');
+          allow delete: if hasOrgPermission(orgId, 'customers:delete');
+        }
+
+        // Customer energy profiles subcollection
+        match /energyProfiles/{profileId} {
+          allow read: if isMemberOfOrg(orgId);
+          allow create: if hasOrgPermission(orgId, 'customers:create');
+          allow update: if hasOrgPermission(orgId, 'customers:edit');
+          allow delete: if hasOrgPermission(orgId, 'customers:delete');
+        }
+      }
+
+      // Quotes subcollection
+      match /quotes/{quoteId} {
+        allow read: if isMemberOfOrg(orgId);
+        allow create: if hasOrgPermission(orgId, 'quotes:create');
+        allow update: if hasOrgPermission(orgId, 'quotes:edit') ||
+          (hasOrgPermission(orgId, 'quotes:approve') &&
+           request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'approvedBy', 'approvedAt', 'updatedAt']));
+        allow delete: if hasOrgPermission(orgId, 'quotes:delete') &&
+          resource.data.status == 'draft';
+      }
+
+      // Audit logs subcollection
+      match /auditLogs/{logId} {
+        allow read: if isMemberOfOrg(orgId);
+        allow create: if isMemberOfOrg(orgId);
+        allow update, delete: if false; // Audit logs are immutable
+      }
+    }
+
+    // Regions collection (read-only reference data)
+    match /regions/{regionCode} {
+      allow read: if isAuthenticated();
+      allow write: if false; // Managed by admin only
+    }
+  }
+}

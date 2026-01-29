@@ -1,0 +1,89 @@
+{
+  "title": "Products",
+  "description": "Manage your product catalog",
+  "newProduct": "New Product",
+  "editProduct": "Edit Product",
+  "addProduct": "Add Product",
+  "productDetails": "Product Details",
+  "importProducts": "Import Products",
+  "empty": {
+    "title": "No products yet",
+    "description": "Add your first product to start building quotes.",
+    "action": "Add Product"
+  },
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "Enter product name",
+    "description": "Description",
+    "descriptionPlaceholder": "Product description",
+    "sku": "SKU",
+    "skuPlaceholder": "Product SKU",
+    "category": "Category",
+    "categoryPlaceholder": "Select category",
+    "unitPrice": "Unit Price",
+    "unitPricePlaceholder": "0.00",
+    "unit": "Unit",
+    "unitPlaceholder": "piece",
+    "taxRate": "Tax Rate (%)",
+    "taxRatePlaceholder": "23",
+    "isActive": "Active",
+    "specifications": "Specifications"
+  },
+  "categories": {
+    "solar_panel": "Solar Panel",
+    "inverter": "Inverter",
+    "battery": "Battery",
+    "mounting": "Mounting System",
+    "cable": "Cable",
+    "accessory": "Accessory",
+    "installation": "Installation",
+    "other": "Other"
+  },
+  "units": {
+    "piece": "Piece",
+    "set": "Set",
+    "meter": "Meter",
+    "kit": "Kit",
+    "hour": "Hour"
+  },
+  "list": {
+    "searchPlaceholder": "Search products...",
+    "columns": {
+      "name": "Name",
+      "sku": "SKU",
+      "category": "Category",
+      "unitPrice": "Price",
+      "status": "Status"
+    }
+  },
+  "delete": {
+    "title": "Delete Product",
+    "description": "Are you sure you want to delete this product? This action cannot be undone.",
+    "success": "Product deleted successfully",
+    "error": "Failed to delete product"
+  },
+  "save": {
+    "success": "Product saved successfully",
+    "error": "Failed to save product"
+  },
+  "specs": {
+    "solarPanel": {
+      "wattage": "Wattage (W)",
+      "efficiency": "Efficiency (%)",
+      "dimensions": "Dimensions",
+      "weight": "Weight (kg)",
+      "warranty": "Warranty (years)"
+    },
+    "inverter": {
+      "power": "Power (kW)",
+      "phases": "Phases",
+      "efficiency": "Efficiency (%)",
+      "warranty": "Warranty (years)"
+    },
+    "battery": {
+      "capacity": "Capacity (kWh)",
+      "cycles": "Cycles",
+      "warranty": "Warranty (years)"
+    }
+  }
+}

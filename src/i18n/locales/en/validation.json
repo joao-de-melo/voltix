@@ -1,0 +1,43 @@
+{
+  "required": "This field is required",
+  "string": {
+    "min": "Must be at least {{count}} characters",
+    "max": "Must be at most {{count}} characters",
+    "length": "Must be exactly {{count}} characters"
+  },
+  "number": {
+    "min": "Must be at least {{count}}",
+    "max": "Must be at most {{count}}",
+    "positive": "Must be a positive number",
+    "integer": "Must be a whole number"
+  },
+  "email": {
+    "invalid": "Invalid email address"
+  },
+  "password": {
+    "minLength": "Password must be at least {{count}} characters",
+    "mismatch": "Passwords don't match",
+    "weak": "Password is too weak"
+  },
+  "phone": {
+    "invalid": "Invalid phone number"
+  },
+  "url": {
+    "invalid": "Invalid URL"
+  },
+  "date": {
+    "invalid": "Invalid date",
+    "past": "Date must be in the past",
+    "future": "Date must be in the future"
+  },
+  "select": {
+    "required": "Please select an option"
+  },
+  "name": {
+    "minLength": "Name must be at least {{count}} characters"
+  },
+  "organization": {
+    "nameMinLength": "Organization name must be at least {{count}} characters",
+    "regionRequired": "Please select a region"
+  }
+}

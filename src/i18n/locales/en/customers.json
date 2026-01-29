@@ -1,0 +1,56 @@
+{
+  "title": "Customers",
+  "description": "Manage your customer database",
+  "newCustomer": "New Customer",
+  "editCustomer": "Edit Customer",
+  "addCustomer": "Add Customer",
+  "customerDetails": "Customer Details",
+  "empty": {
+    "title": "No customers yet",
+    "description": "Add your first customer to start creating quotes.",
+    "action": "Add Customer"
+  },
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "Enter customer name",
+    "email": "Email",
+    "emailPlaceholder": "customer@example.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+351 912 345 678",
+    "company": "Company",
+    "companyPlaceholder": "Company name (optional)",
+    "taxId": "Tax ID (NIF)",
+    "taxIdPlaceholder": "123456789",
+    "address": "Address",
+    "addressPlaceholder": "Street address",
+    "city": "City",
+    "cityPlaceholder": "City",
+    "postalCode": "Postal Code",
+    "postalCodePlaceholder": "1234-567",
+    "country": "Country",
+    "countryPlaceholder": "Portugal",
+    "notes": "Notes",
+    "notesPlaceholder": "Additional notes about this customer"
+  },
+  "list": {
+    "searchPlaceholder": "Search customers...",
+    "columns": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "quotesCount": "Quotes",
+      "createdAt": "Created"
+    }
+  },
+  "delete": {
+    "title": "Delete Customer",
+    "description": "Are you sure you want to delete this customer? This action cannot be undone.",
+    "success": "Customer deleted successfully",
+    "error": "Failed to delete customer"
+  },
+  "save": {
+    "success": "Customer saved successfully",
+    "error": "Failed to save customer"
+  }
+}

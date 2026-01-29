@@ -1,0 +1,89 @@
+{
+  "title": "Produtos",
+  "description": "Gerir o seu catálogo de produtos",
+  "newProduct": "Novo Produto",
+  "editProduct": "Editar Produto",
+  "addProduct": "Adicionar Produto",
+  "productDetails": "Detalhes do Produto",
+  "importProducts": "Importar Produtos",
+  "empty": {
+    "title": "Sem produtos",
+    "description": "Adicione o seu primeiro produto para começar a criar orçamentos.",
+    "action": "Adicionar Produto"
+  },
+  "form": {
+    "name": "Nome",
+    "namePlaceholder": "Introduza o nome do produto",
+    "description": "Descrição",
+    "descriptionPlaceholder": "Descrição do produto",
+    "sku": "SKU",
+    "skuPlaceholder": "SKU do produto",
+    "category": "Categoria",
+    "categoryPlaceholder": "Selecione a categoria",
+    "unitPrice": "Preço Unitário",
+    "unitPricePlaceholder": "0.00",
+    "unit": "Unidade",
+    "unitPlaceholder": "unidade",
+    "taxRate": "Taxa de IVA (%)",
+    "taxRatePlaceholder": "23",
+    "isActive": "Ativo",
+    "specifications": "Especificações"
+  },
+  "categories": {
+    "solar_panel": "Painel Solar",
+    "inverter": "Inversor",
+    "battery": "Bateria",
+    "mounting": "Sistema de Montagem",
+    "cable": "Cabo",
+    "accessory": "Acessório",
+    "installation": "Instalação",
+    "other": "Outro"
+  },
+  "units": {
+    "piece": "Unidade",
+    "set": "Conjunto",
+    "meter": "Metro",
+    "kit": "Kit",
+    "hour": "Hora"
+  },
+  "list": {
+    "searchPlaceholder": "Pesquisar produtos...",
+    "columns": {
+      "name": "Nome",
+      "sku": "SKU",
+      "category": "Categoria",
+      "unitPrice": "Preço",
+      "status": "Estado"
+    }
+  },
+  "delete": {
+    "title": "Eliminar Produto",
+    "description": "Tem a certeza que quer eliminar este produto? Esta ação não pode ser revertida.",
+    "success": "Produto eliminado com sucesso",
+    "error": "Falha ao eliminar produto"
+  },
+  "save": {
+    "success": "Produto guardado com sucesso",
+    "error": "Falha ao guardar produto"
+  },
+  "specs": {
+    "solarPanel": {
+      "wattage": "Potência (W)",
+      "efficiency": "Eficiência (%)",
+      "dimensions": "Dimensões",
+      "weight": "Peso (kg)",
+      "warranty": "Garantia (anos)"
+    },
+    "inverter": {
+      "power": "Potência (kW)",
+      "phases": "Fases",
+      "efficiency": "Eficiência (%)",
+      "warranty": "Garantia (anos)"
+    },
+    "battery": {
+      "capacity": "Capacidade (kWh)",
+      "cycles": "Ciclos",
+      "warranty": "Garantia (anos)"
+    }
+  }
+}

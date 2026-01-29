@@ -1,0 +1,170 @@
+{
+  "title": "Orçamentos",
+  "description": "Gerir os seus orçamentos de sistemas solares",
+  "newQuote": "Novo Orçamento",
+  "quickQuote": "Orçamento Rápido",
+  "editQuote": "Editar Orçamento",
+  "viewQuote": "Ver Orçamento",
+  "quoteDetails": "Detalhes do Orçamento",
+  "empty": {
+    "title": "Sem orçamentos",
+    "description": "Crie o seu primeiro orçamento para começar.",
+    "action": "Novo Orçamento"
+  },
+  "status": {
+    "draft": "Rascunho",
+    "pending_approval": "Aguarda Aprovação",
+    "approved": "Aprovado",
+    "sent": "Enviado",
+    "viewed": "Visualizado",
+    "accepted": "Aceite",
+    "rejected": "Rejeitado",
+    "expired": "Expirado"
+  },
+  "form": {
+    "customer": "Cliente",
+    "customerPlaceholder": "Selecione um cliente",
+    "validUntil": "Válido Até",
+    "notes": "Notas",
+    "notesPlaceholder": "Notas adicionais para o cliente",
+    "internalNotes": "Notas Internas",
+    "internalNotesPlaceholder": "Notas internas (não visíveis para o cliente)"
+  },
+  "customerSelection": {
+    "title": "Informação do Cliente",
+    "description": "Vincule a um cliente existente ou insira os dados de contacto manualmente",
+    "selectCustomer": "Selecionar Cliente",
+    "selectCustomerDescription": "Escolha um cliente para este orçamento",
+    "selectCustomerPlaceholder": "Selecionar cliente...",
+    "selectCustomerOptional": "Selecionar cliente (opcional)...",
+    "searchCustomers": "Pesquisar clientes...",
+    "noCustomerFound": "Nenhum cliente encontrado.",
+    "noCustomersYet": "Nenhum cliente encontrado",
+    "clearSelection": "Limpar seleção",
+    "proceedWithoutCustomer": "Pode prosseguir sem selecionar um cliente. O orçamento será criado como rascunho.",
+    "tabs": {
+      "existing": "Cliente Existente",
+      "manual": "Inserir Manualmente"
+    },
+    "manualEntry": {
+      "description": "Insira as informações básicas de contacto. Pode vincular este orçamento a um cliente mais tarde."
+    }
+  },
+  "contactInfo": {
+    "name": "Nome",
+    "namePlaceholder": "Nome do contacto",
+    "nameRequired": "Nome *",
+    "email": "Email",
+    "emailPlaceholder": "email@exemplo.com",
+    "phone": "Telefone",
+    "phonePlaceholder": "+351 900 000 000",
+    "company": "Empresa (opcional)",
+    "companyPlaceholder": "Nome da empresa"
+  },
+  "siteSelection": {
+    "title": "Selecionar Local de Instalação",
+    "description": "Escolha o local onde o sistema será instalado (opcional)",
+    "selectSite": "Selecionar local (opcional)...",
+    "searchSites": "Pesquisar locais...",
+    "noSiteFound": "Nenhum local encontrado.",
+    "noSitesForCustomer": "Nenhum local registado para este cliente",
+    "continueWithoutSite": "Pode continuar sem um local ou adicionar mais tarde",
+    "roof": "Telhado",
+    "orientation": "Orientação",
+    "shading": "Sombreamento",
+    "energyProfileFound": "Perfil Energético Encontrado",
+    "annualConsumption": "Consumo anual",
+    "contracted": "Contratado"
+  },
+  "sections": {
+    "equipment": "Equipamento",
+    "installation": "Instalação",
+    "accessories": "Acessórios",
+    "addSection": "Adicionar Secção",
+    "sectionName": "Nome da Secção"
+  },
+  "lineItems": {
+    "product": "Produto",
+    "description": "Descrição",
+    "quantity": "Qtd",
+    "unitPrice": "Preço Unit.",
+    "discount": "Desconto",
+    "tax": "IVA",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "addItem": "Adicionar Item"
+  },
+  "totals": {
+    "subtotal": "Subtotal",
+    "discount": "Desconto",
+    "tax": "IVA",
+    "total": "Total"
+  },
+  "actions": {
+    "send": "Enviar Orçamento",
+    "sending": "A enviar...",
+    "approve": "Aprovar",
+    "reject": "Rejeitar",
+    "duplicate": "Duplicar",
+    "download": "Transferir PDF",
+    "preview": "Pré-visualizar"
+  },
+  "dashboard": {
+    "welcome": "Bem-vindo de volta! Aqui está o que está a acontecer com {{organization}}.",
+    "totalQuotes": "Total de Orçamentos",
+    "pendingQuotes": "Orçamentos Pendentes",
+    "totalCustomers": "Total de Clientes",
+    "totalRevenue": "Receita Total",
+    "recentQuotes": "Orçamentos Recentes",
+    "recentActivity": "A sua atividade de orçamentos mais recente",
+    "noQuotes": "Sem orçamentos. Crie o seu primeiro orçamento para começar."
+  },
+  "list": {
+    "searchPlaceholder": "Pesquisar orçamentos...",
+    "columns": {
+      "number": "Orçamento #",
+      "customer": "Cliente",
+      "total": "Total",
+      "status": "Estado",
+      "createdAt": "Criado",
+      "validUntil": "Válido Até"
+    }
+  },
+  "delete": {
+    "title": "Eliminar Orçamento",
+    "description": "Tem a certeza que quer eliminar este orçamento? Esta ação não pode ser revertida.",
+    "success": "Orçamento eliminado com sucesso",
+    "error": "Falha ao eliminar orçamento"
+  },
+  "save": {
+    "success": "Orçamento guardado com sucesso",
+    "error": "Falha ao guardar orçamento"
+  },
+  "send": {
+    "success": "Orçamento enviado com sucesso",
+    "error": "Falha ao enviar orçamento"
+  },
+  "systemSummary": {
+    "title": "Resumo do Sistema",
+    "totalPanels": "Total de Painéis",
+    "totalPower": "Potência Total",
+    "batteryCapacity": "Capacidade da Bateria",
+    "inverterCapacity": "Capacidade do Inversor",
+    "estimatedProduction": "Produção Anual Estimada"
+  },
+  "sizing": {
+    "title": "Dimensionamento do Sistema",
+    "annualConsumption": "Consumo Anual (kWh)",
+    "contractedPower": "Potência Contratada (kVA)",
+    "roofType": "Tipo de Telhado",
+    "roofTypes": {
+      "tile": "Telha",
+      "metal": "Metálico",
+      "flat": "Plano",
+      "ground": "Solo"
+    },
+    "includeBattery": "Incluir Armazenamento em Bateria",
+    "calculate": "Calcular Sistema",
+    "recommended": "Sistema Recomendado"
+  }
+}

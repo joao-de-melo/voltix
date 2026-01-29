@@ -1,0 +1,27 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Quote PDFs
+    match /quotes/{orgId}/{quoteId}/{fileName} {
+      allow read: if isAuthenticated();
+      allow write: if false; // Only Cloud Functions can write
+    }
+
+    // Organization logos and assets
+    match /organizations/{orgId}/{allPaths=**} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated(); // TODO: Add org member check
+    }
+
+    // Customer site photos and documents
+    match /customers/{orgId}/{customerId}/{allPaths=**} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated(); // TODO: Add org member check
+    }
+  }
+}

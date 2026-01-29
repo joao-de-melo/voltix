@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "dashboard": "Painel",
+    "customers": "Clientes",
+    "products": "Produtos",
+    "quotes": "Orçamentos",
+    "settings": "Definições"
+  },
+  "header": {
+    "organizations": "Organizações",
+    "createOrganization": "Criar Organização",
+    "selectOrganization": "Selecionar Organização",
+    "myAccount": "Minha Conta",
+    "profile": "Perfil",
+    "settings": "Definições",
+    "signOut": "Terminar sessão"
+  },
+  "buttons": {
+    "save": "Guardar",
+    "saveChanges": "Guardar Alterações",
+    "saving": "A guardar...",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "deleting": "A eliminar...",
+    "confirm": "Confirmar",
+    "create": "Criar",
+    "creating": "A criar...",
+    "edit": "Editar",
+    "add": "Adicionar",
+    "remove": "Remover",
+    "search": "Pesquisar",
+    "filter": "Filtrar",
+    "export": "Exportar",
+    "import": "Importar",
+    "back": "Voltar",
+    "next": "Seguinte",
+    "previous": "Anterior",
+    "close": "Fechar",
+    "viewAll": "Ver todos",
+    "loading": "A carregar..."
+  },
+  "status": {
+    "active": "Ativo",
+    "inactive": "Inativo",
+    "pending": "Pendente",
+    "completed": "Concluído",
+    "failed": "Falhou"
+  },
+  "errors": {
+    "generic": "Algo correu mal",
+    "notFound": "Não encontrado",
+    "unauthorized": "Não autorizado",
+    "forbidden": "Acesso negado",
+    "networkError": "Erro de rede. Verifique a sua ligação.",
+    "tryAgain": "Por favor tente novamente"
+  },
+  "empty": {
+    "noData": "Sem dados disponíveis",
+    "noResults": "Nenhum resultado encontrado"
+  },
+  "confirm": {
+    "deleteTitle": "Tem a certeza?",
+    "deleteDescription": "Esta ação não pode ser revertida.",
+    "unsavedChanges": "Tem alterações não guardadas. Tem a certeza que quer sair?"
+  },
+  "pagination": {
+    "showing": "A mostrar {{from}} a {{to}} de {{total}} resultados",
+    "page": "Página {{current}} de {{total}}"
+  }
+}

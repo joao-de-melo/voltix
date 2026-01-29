@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "voltix-solar-52078",
+    "local": "demo-project",
+    "prod": "voltix-solar-52078"
+  }
+}

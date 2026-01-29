@@ -1,0 +1,233 @@
+{
+  "title": "Definições",
+  "description": "Gerir as definições da sua conta e organização",
+  "nav": {
+    "profile": "Perfil",
+    "account": "Conta",
+    "preferences": "Preferências",
+    "organization": "Organização",
+    "general": "Geral",
+    "billing": "Faturação",
+    "branding": "Marca",
+    "other": "Outros",
+    "team": "Equipa",
+    "quoteSettings": "Definições de Orçamentos"
+  },
+  "tabs": {
+    "profile": "Perfil",
+    "organization": "Organização",
+    "team": "Equipa",
+    "billing": "Faturação"
+  },
+  "account": {
+    "title": "Definições da Conta",
+    "description": "Gerir as informações da sua conta pessoal",
+    "personalInfo": "Informação Pessoal",
+    "displayName": "Nome de Apresentação",
+    "email": "Email",
+    "emailCannotBeChanged": "O email não pode ser alterado",
+    "save": {
+      "success": "Conta atualizada com sucesso",
+      "error": "Falha ao atualizar conta"
+    }
+  },
+  "preferences": {
+    "title": "Preferências",
+    "description": "Personalize a sua experiência e definições de notificações",
+    "appearance": "Aparência",
+    "theme": "Tema",
+    "themes": {
+      "light": "Claro",
+      "dark": "Escuro",
+      "system": "Sistema"
+    },
+    "languageRegion": "Idioma e Região",
+    "languages": {
+      "pt-PT": "Português (Portugal)",
+      "en-US": "Inglês (EUA)",
+      "es-ES": "Espanhol (Espanha)",
+      "pt": "Português",
+      "en": "Inglês"
+    },
+    "notifications": "Notificações",
+    "notificationsDescription": "Configure como recebe notificações",
+    "emailNotifications": "Notificações por Email",
+    "emailNotificationsDescription": "Receber notificações por email",
+    "quoteUpdates": "Atualizações de Orçamentos",
+    "quoteUpdatesDescription": "Ser notificado quando orçamentos são visualizados ou aceites",
+    "teamActivity": "Atividade da Equipa",
+    "teamActivityDescription": "Ser notificado sobre atividade dos membros da equipa",
+    "save": {
+      "success": "Preferências atualizadas com sucesso",
+      "error": "Falha ao atualizar preferências"
+    }
+  },
+  "general": {
+    "title": "Definições Gerais",
+    "description": "Gerir as informações básicas da sua organização",
+    "generalInfo": "Informação Geral",
+    "name": "Nome da Organização",
+    "taxId": "NIF",
+    "region": "Região",
+    "regionDescription": "Afeta as definições de moeda e impostos",
+    "contactInfo": "Informação de Contacto",
+    "contactEmail": "Email de Contacto",
+    "contactPhone": "Telefone de Contacto",
+    "address": "Morada",
+    "street": "Rua",
+    "city": "Cidade",
+    "postalCode": "Código Postal",
+    "country": "País",
+    "save": {
+      "success": "Definições da organização atualizadas com sucesso",
+      "error": "Falha ao atualizar definições da organização"
+    }
+  },
+  "billing": {
+    "title": "Faturação e Subscrição",
+    "description": "Ver informações da sua subscrição e utilização",
+    "currentPlan": "Plano Atual",
+    "plan": "Plano",
+    "status": "Estado",
+    "plans": {
+      "free": "Gratuito",
+      "starter": "Iniciante",
+      "professional": "Profissional",
+      "enterprise": "Empresarial"
+    },
+    "statuses": {
+      "active": "Ativo",
+      "trialing": "Em Teste",
+      "past_due": "Em Atraso",
+      "canceled": "Cancelado"
+    },
+    "renewsOn": "Renova Em",
+    "usage": "Utilização",
+    "quotesUsed": "{{used}} de {{limit}} orçamentos utilizados",
+    "usageWarning": "Está a aproximar-se do limite de orçamentos. Considere atualizar o seu plano.",
+    "upgradePlan": "Atualizar Plano",
+    "manageBilling": "Gerir Faturação"
+  },
+  "branding": {
+    "title": "Marca",
+    "description": "Personalizar a aparência dos seus orçamentos e documentos",
+    "colors": "Cores",
+    "primaryColor": "Cor Principal",
+    "primaryColorDescription": "Cor principal usada em cabeçalhos e botões",
+    "secondaryColor": "Cor Secundária",
+    "secondaryColorDescription": "Cor de destaque usada para realces",
+    "quoteCustomization": "Personalização de Orçamentos",
+    "headerText": "Texto do Cabeçalho",
+    "headerTextPlaceholder": "Texto exibido no topo dos orçamentos",
+    "headerTextDescription": "Texto personalizado mostrado no cabeçalho dos seus orçamentos",
+    "footerText": "Texto do Rodapé",
+    "footerTextPlaceholder": "Texto exibido no fundo dos orçamentos",
+    "footerTextDescription": "Texto personalizado mostrado no rodapé dos seus orçamentos",
+    "termsAndConditions": "Termos e Condições",
+    "termsAndConditionsPlaceholder": "Introduza os seus termos e condições aqui...",
+    "termsAndConditionsDescription": "Termos e condições padrão incluídos nos seus orçamentos",
+    "save": {
+      "success": "Definições de marca atualizadas com sucesso",
+      "error": "Falha ao atualizar definições de marca"
+    }
+  },
+  "profile": {
+    "title": "Definições de Perfil",
+    "description": "Gerir o seu perfil pessoal e preferências",
+    "personalInfo": "Informação Pessoal",
+    "displayName": "Nome de Apresentação",
+    "email": "Email",
+    "emailCannotBeChanged": "O email não pode ser alterado",
+    "preferences": "Preferências",
+    "theme": "Tema",
+    "themes": {
+      "light": "Claro",
+      "dark": "Escuro",
+      "system": "Sistema"
+    },
+    "languageRegion": "Idioma e Região",
+    "languages": {
+      "pt-PT": "Português (Portugal)",
+      "en-US": "Inglês (EUA)",
+      "es-ES": "Espanhol (Espanha)",
+      "pt": "Português",
+      "en": "Inglês"
+    },
+    "notifications": "Notificações",
+    "notificationsDescription": "Configure como recebe notificações",
+    "emailNotifications": "Notificações por Email",
+    "emailNotificationsDescription": "Receber notificações por email",
+    "quoteUpdates": "Atualizações de Orçamentos",
+    "quoteUpdatesDescription": "Ser notificado quando orçamentos são visualizados ou aceites",
+    "teamActivity": "Atividade da Equipa",
+    "teamActivityDescription": "Ser notificado sobre atividade dos membros da equipa",
+    "save": {
+      "success": "Perfil atualizado com sucesso",
+      "error": "Falha ao atualizar perfil"
+    }
+  },
+  "organization": {
+    "title": "Definições da Organização",
+    "description": "Gerir os detalhes e preferências da sua organização",
+    "generalInfo": "Informação Geral",
+    "name": "Nome da Organização",
+    "slug": "URL Slug",
+    "region": "Região",
+    "taxId": "NIF",
+    "quoteSettings": "Definições de Orçamentos",
+    "quotePrefix": "Prefixo do Orçamento",
+    "quotePrefixDescription": "Prefixo para números de orçamento (ex: ORC-00001)",
+    "quoteStartNumber": "Número Inicial",
+    "quoteValidityDays": "Validade Padrão (Dias)",
+    "defaultTaxRate": "Taxa de IVA Padrão (%)",
+    "currency": "Moeda",
+    "branding": "Marca",
+    "logo": "Logótipo",
+    "uploadLogo": "Carregar Logótipo",
+    "primaryColor": "Cor Principal",
+    "dangerZone": "Zona de Perigo",
+    "deleteOrganization": "Eliminar Organização",
+    "deleteOrganizationDescription": "Eliminar permanentemente esta organização e todos os seus dados",
+    "save": {
+      "success": "Definições da organização atualizadas com sucesso",
+      "error": "Falha ao atualizar definições da organização"
+    }
+  },
+  "team": {
+    "title": "Membros da Equipa",
+    "description": "Gerir quem tem acesso à sua organização",
+    "inviteMember": "Convidar Membro",
+    "email": "Endereço de Email",
+    "role": "Função",
+    "roles": {
+      "owner": "Proprietário",
+      "admin": "Administrador",
+      "member": "Membro",
+      "viewer": "Visualizador"
+    },
+    "status": {
+      "active": "Ativo",
+      "pending": "Pendente",
+      "disabled": "Desativado"
+    },
+    "actions": {
+      "changeRole": "Alterar Função",
+      "remove": "Remover",
+      "resendInvite": "Reenviar Convite"
+    },
+    "empty": {
+      "title": "Sem membros na equipa",
+      "description": "Convide membros da equipa para colaborar em orçamentos"
+    },
+    "invite": {
+      "success": "Convite enviado com sucesso",
+      "error": "Falha ao enviar convite"
+    },
+    "remove": {
+      "title": "Remover Membro da Equipa",
+      "description": "Tem a certeza que quer remover este membro da equipa? Ele perderá acesso a esta organização.",
+      "success": "Membro da equipa removido com sucesso",
+      "error": "Falha ao remover membro da equipa"
+    }
+  }
+}

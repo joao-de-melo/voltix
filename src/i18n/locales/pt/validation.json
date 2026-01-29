@@ -1,0 +1,43 @@
+{
+  "required": "Este campo é obrigatório",
+  "string": {
+    "min": "Deve ter pelo menos {{count}} caracteres",
+    "max": "Deve ter no máximo {{count}} caracteres",
+    "length": "Deve ter exatamente {{count}} caracteres"
+  },
+  "number": {
+    "min": "Deve ser pelo menos {{count}}",
+    "max": "Deve ser no máximo {{count}}",
+    "positive": "Deve ser um número positivo",
+    "integer": "Deve ser um número inteiro"
+  },
+  "email": {
+    "invalid": "Endereço de email inválido"
+  },
+  "password": {
+    "minLength": "A palavra-passe deve ter pelo menos {{count}} caracteres",
+    "mismatch": "As palavras-passe não coincidem",
+    "weak": "A palavra-passe é muito fraca"
+  },
+  "phone": {
+    "invalid": "Número de telefone inválido"
+  },
+  "url": {
+    "invalid": "URL inválido"
+  },
+  "date": {
+    "invalid": "Data inválida",
+    "past": "A data deve ser no passado",
+    "future": "A data deve ser no futuro"
+  },
+  "select": {
+    "required": "Por favor selecione uma opção"
+  },
+  "name": {
+    "minLength": "O nome deve ter pelo menos {{count}} caracteres"
+  },
+  "organization": {
+    "nameMinLength": "O nome da organização deve ter pelo menos {{count}} caracteres",
+    "regionRequired": "Por favor selecione uma região"
+  }
+}
