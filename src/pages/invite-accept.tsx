@@ -28,21 +28,31 @@ export function InviteAcceptPage() {
   const { user, firebaseUser, isLoading: authLoading, isAuthenticated, refreshMemberships } = useAuth();
 
   const [invitation, setInvitation] = useState<Invitation | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isAccepting, setIsAccepting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [alreadyMember, setAlreadyMember] = useState(false);
   const [accepted, setAccepted] = useState(false);
 
-  // Load invitation data
+  // Only load invitation data AFTER user is authenticated
   useEffect(() => {
+    // Wait for auth to finish loading
+    if (authLoading) return;
+
+    // Don't load if not authenticated - we'll show login prompt
+    if (!isAuthenticated) return;
+
+    // Need a valid token
     if (!token) {
       setError("invalidToken");
-      setIsLoading(false);
       return;
     }
 
+    // Don't reload if we already have the invitation
+    if (invitation) return;
+
     const loadInvitation = async () => {
+      setIsLoading(true);
       try {
         const inv = await getInvitationByToken(token);
         if (!inv) {
@@ -67,7 +77,7 @@ export function InviteAcceptPage() {
     };
 
     loadInvitation();
-  }, [token]);
+  }, [token, authLoading, isAuthenticated, invitation]);
 
   // Check if user is already a member
   useEffect(() => {
@@ -111,8 +121,56 @@ export function InviteAcceptPage() {
     }
   };
 
-  // Show loading state
-  if (isLoading || authLoading) {
+  // Show loading while checking auth
+  if (authLoading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-muted/50 p-4">
+        <Card className="w-full max-w-md">
+          <CardContent className="flex flex-col items-center justify-center py-12">
+            <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+            <p className="mt-4 text-muted-foreground">
+              {t("team:acceptInvite.loading")}
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  // Show login required state BEFORE trying to load invitation
+  if (!isAuthenticated) {
+    const returnUrl = encodeURIComponent(`/invite/${token}`);
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-muted/50 p-4">
+        <Card className="w-full max-w-md">
+          <CardHeader className="text-center">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+              <Users className="h-6 w-6 text-primary" />
+            </div>
+            <CardTitle className="mt-4">{t("team:acceptInvite.title")}</CardTitle>
+            <CardDescription>
+              {t("team:acceptInvite.loginRequired")}
+            </CardDescription>
+          </CardHeader>
+          <CardFooter className="flex flex-col gap-2">
+            <Button className="w-full" asChild>
+              <Link to={`/login?returnUrl=${returnUrl}`}>
+                {t("team:acceptInvite.loginButton")}
+              </Link>
+            </Button>
+            <Button variant="outline" className="w-full" asChild>
+              <Link to={`/register?returnUrl=${returnUrl}`}>
+                {t("team:acceptInvite.registerButton")}
+              </Link>
+            </Button>
+          </CardFooter>
+        </Card>
+      </div>
+    );
+  }
+
+  // Show loading while fetching invitation (after auth is confirmed)
+  if (isLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-muted/50 p-4">
         <Card className="w-full max-w-md">
@@ -145,64 +203,6 @@ export function InviteAcceptPage() {
           <CardFooter className="justify-center">
             <Button asChild>
               <Link to="/dashboard">{t("common:buttons.goToDashboard")}</Link>
-            </Button>
-          </CardFooter>
-        </Card>
-      </div>
-    );
-  }
-
-  // Show login required state
-  if (!isAuthenticated) {
-    const returnUrl = encodeURIComponent(`/invite/${token}`);
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-muted/50 p-4">
-        <Card className="w-full max-w-md">
-          <CardHeader className="text-center">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-              <Users className="h-6 w-6 text-primary" />
-            </div>
-            <CardTitle className="mt-4">{t("team:acceptInvite.title")}</CardTitle>
-            <CardDescription>
-              {invitation
-                ? t("team:acceptInvite.description", {
-                    orgName: invitation.orgName,
-                  })
-                : t("team:acceptInvite.loginRequired")}
-            </CardDescription>
-          </CardHeader>
-          {invitation && (
-            <CardContent className="space-y-4">
-              <div className="rounded-lg border p-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">
-                    {t("team:acceptInvite.role")}
-                  </span>
-                  <Badge variant="secondary">
-                    {t(`team:roles.${invitation.role}`)}
-                  </Badge>
-                </div>
-                <div className="mt-2 flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">
-                    {t("team:acceptInvite.invitedBy")}
-                  </span>
-                  <span className="text-sm font-medium">
-                    {invitation.invitedByName}
-                  </span>
-                </div>
-              </div>
-            </CardContent>
-          )}
-          <CardFooter className="flex flex-col gap-2">
-            <Button className="w-full" asChild>
-              <Link to={`/login?returnUrl=${returnUrl}`}>
-                {t("team:acceptInvite.loginButton")}
-              </Link>
-            </Button>
-            <Button variant="outline" className="w-full" asChild>
-              <Link to={`/register?returnUrl=${returnUrl}`}>
-                {t("team:acceptInvite.registerButton")}
-              </Link>
             </Button>
           </CardFooter>
         </Card>
@@ -255,6 +255,22 @@ export function InviteAcceptPage() {
     );
   }
 
+  // Still loading invitation (no error, no invitation yet)
+  if (!invitation) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-muted/50 p-4">
+        <Card className="w-full max-w-md">
+          <CardContent className="flex flex-col items-center justify-center py-12">
+            <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+            <p className="mt-4 text-muted-foreground">
+              {t("team:acceptInvite.loading")}
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
   // Show invitation details and accept button
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted/50 p-4">
@@ -266,7 +282,7 @@ export function InviteAcceptPage() {
           <CardTitle className="mt-4">{t("team:acceptInvite.title")}</CardTitle>
           <CardDescription>
             {t("team:acceptInvite.description", {
-              orgName: invitation?.orgName,
+              orgName: invitation.orgName,
             })}
           </CardDescription>
         </CardHeader>
@@ -277,7 +293,7 @@ export function InviteAcceptPage() {
                 {t("team:acceptInvite.role")}
               </span>
               <Badge variant="secondary">
-                {t(`team:roles.${invitation?.role}`)}
+                {t(`team:roles.${invitation.role}`)}
               </Badge>
             </div>
             <div className="mt-2 flex items-center justify-between">
@@ -285,7 +301,7 @@ export function InviteAcceptPage() {
                 {t("team:acceptInvite.invitedBy")}
               </span>
               <span className="text-sm font-medium">
-                {invitation?.invitedByName}
+                {invitation.invitedByName}
               </span>
             </div>
           </div>
