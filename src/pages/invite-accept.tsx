@@ -140,6 +140,8 @@ export function InviteAcceptPage() {
   // Show login required state BEFORE trying to load invitation
   if (!isAuthenticated) {
     const returnUrl = encodeURIComponent(`/invite/${token}`);
+    // Also store in sessionStorage as backup for OAuth flows
+    sessionStorage.setItem('voltix_invite_return', `/invite/${token}`);
     return (
       <div className="flex min-h-screen items-center justify-center bg-muted/50 p-4">
         <Card className="w-full max-w-md">

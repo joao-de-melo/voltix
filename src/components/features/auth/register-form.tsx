@@ -25,8 +25,20 @@ export function RegisterForm() {
   const [searchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
 
-  // Get return URL from query params, default to onboarding for new users
-  const returnUrl = searchParams.get('returnUrl') || '/onboarding';
+  // Get return URL from query params, sessionStorage fallback, or default to onboarding
+  const getReturnUrl = () => {
+    const fromParams = searchParams.get('returnUrl');
+    if (fromParams) return fromParams;
+
+    const fromStorage = sessionStorage.getItem('voltix_invite_return');
+    if (fromStorage) {
+      sessionStorage.removeItem('voltix_invite_return');
+      return fromStorage;
+    }
+
+    return '/onboarding';
+  };
+  const returnUrl = getReturnUrl();
 
   const registerSchema = z.object({
     name: z.string().min(2, t('validation:name.minLength', { count: 2 })),

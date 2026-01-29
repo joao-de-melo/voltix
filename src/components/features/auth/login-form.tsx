@@ -25,8 +25,20 @@ export function LoginForm() {
   const [searchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
 
-  // Get return URL from query params, default to dashboard
-  const returnUrl = searchParams.get('returnUrl') || '/dashboard';
+  // Get return URL from query params, sessionStorage fallback, or default to dashboard
+  const getReturnUrl = () => {
+    const fromParams = searchParams.get('returnUrl');
+    if (fromParams) return fromParams;
+
+    const fromStorage = sessionStorage.getItem('voltix_invite_return');
+    if (fromStorage) {
+      sessionStorage.removeItem('voltix_invite_return');
+      return fromStorage;
+    }
+
+    return '/dashboard';
+  };
+  const returnUrl = getReturnUrl();
 
   const loginSchema = z.object({
     email: z.string().email(t('validation:email.invalid')),
