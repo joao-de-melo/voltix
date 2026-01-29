@@ -59,8 +59,8 @@ service cloud.firestore {
       // User memberships subcollection
       match /memberships/{orgId} {
         allow read: if isOwner(userId);
-        // Allow user to create their own membership when creating an org (as owner)
-        allow create: if isOwner(userId) && request.resource.data.role == 'owner';
+        // Allow user to create their own membership (org creation or accepting invitation)
+        allow create: if isOwner(userId);
         allow update, delete: if false; // Managed by Cloud Functions or org operations
       }
     }
@@ -75,9 +75,12 @@ service cloud.firestore {
       // Organization members subcollection
       match /members/{userId} {
         allow read: if isMemberOfOrg(orgId);
-        // Allow user to create their own membership as owner (for org creation)
-        // or allow existing admins/managers to add members
+        // Allow user to create their own membership:
+        // 1. As owner (for org creation), OR
+        // 2. When accepting an invitation (user creates their own membership), OR
+        // 3. Existing admins/managers can add members
         allow create: if (isOwner(userId) && request.resource.data.role == 'owner') ||
+                        (isOwner(userId) && request.resource.data.role != 'owner') ||
                         hasOrgRole(orgId, ['owner', 'admin', 'manager']);
         allow update: if hasOrgRole(orgId, ['owner', 'admin']);
         allow delete: if hasOrgRole(orgId, ['owner', 'admin']) && userId != request.auth.uid;
