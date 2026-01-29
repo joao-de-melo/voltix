@@ -10,6 +10,7 @@ import enProducts from './locales/en/products.json';
 import enQuotes from './locales/en/quotes.json';
 import enSettings from './locales/en/settings.json';
 import enValidation from './locales/en/validation.json';
+import enTeam from './locales/en/team.json';
 
 // Portuguese translations
 import ptCommon from './locales/pt/common.json';
@@ -19,6 +20,7 @@ import ptProducts from './locales/pt/products.json';
 import ptQuotes from './locales/pt/quotes.json';
 import ptSettings from './locales/pt/settings.json';
 import ptValidation from './locales/pt/validation.json';
+import ptTeam from './locales/pt/team.json';
 
 export const resources = {
   en: {
@@ -29,6 +31,7 @@ export const resources = {
     quotes: enQuotes,
     settings: enSettings,
     validation: enValidation,
+    team: enTeam,
   },
   pt: {
     common: ptCommon,
@@ -38,6 +41,7 @@ export const resources = {
     quotes: ptQuotes,
     settings: ptSettings,
     validation: ptValidation,
+    team: ptTeam,
   },
 };
 
@@ -52,7 +56,7 @@ i18n
     fallbackLng: 'en',
     supportedLngs: supportedLanguages,
     defaultNS: 'common',
-    ns: ['common', 'auth', 'customers', 'products', 'quotes', 'settings', 'validation'],
+    ns: ['common', 'auth', 'customers', 'products', 'quotes', 'settings', 'validation', 'team'],
     interpolation: {
       escapeValue: false, // React already escapes values
     },

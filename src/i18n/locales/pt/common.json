@@ -37,7 +37,8 @@
     "previous": "Anterior",
     "close": "Fechar",
     "viewAll": "Ver todos",
-    "loading": "A carregar..."
+    "loading": "A carregar...",
+    "goToDashboard": "Ir para o Painel"
   },
   "status": {
     "active": "Ativo",

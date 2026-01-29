@@ -37,7 +37,8 @@
     "previous": "Previous",
     "close": "Close",
     "viewAll": "View all",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "goToDashboard": "Go to Dashboard"
   },
   "status": {
     "active": "Active",

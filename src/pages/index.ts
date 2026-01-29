@@ -14,3 +14,4 @@ export { QuoteNewPage } from "./quote-new";
 export { QuoteViewPage } from "./quote-view";
 export { QuoteEditPage } from "./quote-edit";
 export { QuickQuotePage } from "./quotes/quick-quote";
+export { InviteAcceptPage } from "./invite-accept";

@@ -139,13 +139,15 @@ export interface Membership {
 export interface Invitation extends BaseEntity {
   orgId: string;
   orgName: string;
-  email: string;
+  email?: string;           // Optional - null for link invitations
   role: UserRole;
   invitedBy: string;
   invitedByName: string;
   status: "pending" | "accepted" | "expired" | "revoked";
   token: string;
   expiresAt: FirestoreTimestamp;
+  type: "email" | "link";   // Distinguish invitation type
+  acceptedBy?: string;      // Who accepted (for link invitations)
 }
 
 // ============================================

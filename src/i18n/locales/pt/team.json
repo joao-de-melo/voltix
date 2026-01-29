@@ -1,0 +1,101 @@
+{
+  "title": "Equipa",
+  "description": "Gerir membros da equipa e convites",
+  "members": {
+    "title": "Membros da Equipa",
+    "description": "Pessoas com acesso a esta organização",
+    "empty": {
+      "title": "Sem membros na equipa",
+      "description": "É o único membro desta organização"
+    },
+    "you": "Você",
+    "owner": "Proprietário",
+    "joined": "Entrou em {{date}}"
+  },
+  "invitations": {
+    "title": "Convites Pendentes",
+    "description": "Convites à espera de serem aceites",
+    "empty": {
+      "title": "Sem convites pendentes",
+      "description": "Crie um link de convite para convidar membros"
+    },
+    "expires": "Expira em {{date}}",
+    "expired": "Expirado",
+    "linkType": "Link",
+    "emailType": "Email"
+  },
+  "roles": {
+    "owner": "Proprietário",
+    "admin": "Administrador",
+    "manager": "Gestor",
+    "sales": "Vendas",
+    "viewer": "Visualizador"
+  },
+  "roleDescriptions": {
+    "owner": "Acesso total a tudo, incluindo faturação e zona de perigo",
+    "admin": "Acesso total exceto faturação e zona de perigo",
+    "manager": "Pode gerir orçamentos, clientes, produtos e convidar membros",
+    "sales": "Pode criar e editar orçamentos e clientes",
+    "viewer": "Acesso apenas de leitura para visualizar dados"
+  },
+  "createInvite": {
+    "title": "Criar Link de Convite",
+    "description": "Gerar um link partilhável para convidar alguém para a sua organização",
+    "button": "Criar Link de Convite",
+    "role": "Função",
+    "rolePlaceholder": "Selecione uma função",
+    "expiration": "Link Expira Em",
+    "expirationOptions": {
+      "1": "1 dia",
+      "3": "3 dias",
+      "7": "7 dias",
+      "14": "14 dias",
+      "30": "30 dias"
+    },
+    "success": "Link de convite criado",
+    "error": "Falha ao criar link de convite"
+  },
+  "copyLink": {
+    "button": "Copiar Link",
+    "success": "Link copiado para a área de transferência"
+  },
+  "revokeInvite": {
+    "title": "Revogar Convite",
+    "description": "Tem a certeza que quer revogar este convite? O link deixará de funcionar.",
+    "button": "Revogar",
+    "success": "Convite revogado",
+    "error": "Falha ao revogar convite"
+  },
+  "changeRole": {
+    "title": "Alterar Função",
+    "description": "Alterar a função de {{name}}",
+    "success": "Função atualizada com sucesso",
+    "error": "Falha ao atualizar função",
+    "cannotDemoteLastOwner": "Não é possível rebaixar o último proprietário"
+  },
+  "removeMember": {
+    "title": "Remover Membro",
+    "description": "Tem a certeza que quer remover {{name}} desta organização? Perderá todo o acesso.",
+    "button": "Remover",
+    "success": "Membro removido com sucesso",
+    "error": "Falha ao remover membro",
+    "cannotRemoveLastOwner": "Não é possível remover o último proprietário"
+  },
+  "acceptInvite": {
+    "title": "Foi convidado!",
+    "description": "Foi convidado para se juntar a {{orgName}}",
+    "role": "Vai entrar como",
+    "invitedBy": "Convidado por",
+    "joinButton": "Entrar na Organização",
+    "joining": "A entrar...",
+    "success": "Entrou em {{orgName}}!",
+    "error": "Falha ao aceitar convite",
+    "alreadyMember": "Já é membro desta organização",
+    "invalidToken": "Este link de convite é inválido ou expirou",
+    "expired": "Este convite expirou",
+    "loading": "A carregar convite...",
+    "loginRequired": "Por favor inicie sessão para aceitar este convite",
+    "loginButton": "Iniciar Sessão",
+    "registerButton": "Criar Conta"
+  }
+}

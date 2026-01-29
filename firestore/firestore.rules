@@ -85,11 +85,18 @@ service cloud.firestore {
 
       // Invitations subcollection
       match /invitations/{invitationId} {
+        // Allow read if:
+        // 1. User is member of the org, OR
+        // 2. User's email matches (for email invitations), OR
+        // 3. It's a link invitation and user is authenticated (they have the token)
         allow read: if isMemberOfOrg(orgId) ||
-          (isAuthenticated() && resource.data.email == request.auth.token.email);
+          (isAuthenticated() && resource.data.email == request.auth.token.email) ||
+          (isAuthenticated() && resource.data.type == 'link');
         allow create: if hasOrgPermission(orgId, 'users:invite');
+        // Allow update for accepting invitations (email match or link type)
         allow update: if hasOrgRole(orgId, ['owner', 'admin']) ||
-          (isAuthenticated() && resource.data.email == request.auth.token.email);
+          (isAuthenticated() && resource.data.email == request.auth.token.email) ||
+          (isAuthenticated() && resource.data.type == 'link' && resource.data.status == 'pending');
         allow delete: if hasOrgRole(orgId, ['owner', 'admin']);
       }
 

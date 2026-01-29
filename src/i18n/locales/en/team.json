@@ -1,0 +1,101 @@
+{
+  "title": "Team",
+  "description": "Manage team members and invitations",
+  "members": {
+    "title": "Team Members",
+    "description": "People with access to this organization",
+    "empty": {
+      "title": "No team members",
+      "description": "You're the only member of this organization"
+    },
+    "you": "You",
+    "owner": "Owner",
+    "joined": "Joined {{date}}"
+  },
+  "invitations": {
+    "title": "Pending Invitations",
+    "description": "Invitations waiting to be accepted",
+    "empty": {
+      "title": "No pending invitations",
+      "description": "Create an invitation link to invite team members"
+    },
+    "expires": "Expires {{date}}",
+    "expired": "Expired",
+    "linkType": "Link",
+    "emailType": "Email"
+  },
+  "roles": {
+    "owner": "Owner",
+    "admin": "Admin",
+    "manager": "Manager",
+    "sales": "Sales",
+    "viewer": "Viewer"
+  },
+  "roleDescriptions": {
+    "owner": "Full access to everything, including billing and danger zone",
+    "admin": "Full access except billing and danger zone",
+    "manager": "Can manage quotes, customers, products, and invite members",
+    "sales": "Can create and edit quotes and customers",
+    "viewer": "Read-only access to view data"
+  },
+  "createInvite": {
+    "title": "Create Invitation Link",
+    "description": "Generate a shareable link to invite someone to your organization",
+    "button": "Create Invite Link",
+    "role": "Role",
+    "rolePlaceholder": "Select a role",
+    "expiration": "Link Expires In",
+    "expirationOptions": {
+      "1": "1 day",
+      "3": "3 days",
+      "7": "7 days",
+      "14": "14 days",
+      "30": "30 days"
+    },
+    "success": "Invitation link created",
+    "error": "Failed to create invitation link"
+  },
+  "copyLink": {
+    "button": "Copy Link",
+    "success": "Link copied to clipboard"
+  },
+  "revokeInvite": {
+    "title": "Revoke Invitation",
+    "description": "Are you sure you want to revoke this invitation? The link will no longer work.",
+    "button": "Revoke",
+    "success": "Invitation revoked",
+    "error": "Failed to revoke invitation"
+  },
+  "changeRole": {
+    "title": "Change Role",
+    "description": "Change the role for {{name}}",
+    "success": "Role updated successfully",
+    "error": "Failed to update role",
+    "cannotDemoteLastOwner": "Cannot demote the last owner"
+  },
+  "removeMember": {
+    "title": "Remove Member",
+    "description": "Are you sure you want to remove {{name}} from this organization? They will lose all access.",
+    "button": "Remove",
+    "success": "Member removed successfully",
+    "error": "Failed to remove member",
+    "cannotRemoveLastOwner": "Cannot remove the last owner"
+  },
+  "acceptInvite": {
+    "title": "You've been invited!",
+    "description": "You've been invited to join {{orgName}}",
+    "role": "You'll join as",
+    "invitedBy": "Invited by",
+    "joinButton": "Join Organization",
+    "joining": "Joining...",
+    "success": "You've joined {{orgName}}!",
+    "error": "Failed to accept invitation",
+    "alreadyMember": "You're already a member of this organization",
+    "invalidToken": "This invitation link is invalid or has expired",
+    "expired": "This invitation has expired",
+    "loading": "Loading invitation...",
+    "loginRequired": "Please log in to accept this invitation",
+    "loginButton": "Log In",
+    "registerButton": "Create Account"
+  }
+}

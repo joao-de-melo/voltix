@@ -1,5 +1,5 @@
 import { NavLink, Outlet, useLocation } from "react-router-dom";
-import { Building2, CreditCard, Palette } from "lucide-react";
+import { Building2, CreditCard, Palette, Users } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 
@@ -9,6 +9,12 @@ const organizationNavigation = [
     href: "/settings/organization/general",
     icon: Building2,
     i18nKey: "settings:nav.general",
+  },
+  {
+    name: "Team",
+    href: "/settings/organization/team",
+    icon: Users,
+    i18nKey: "settings:nav.team",
   },
   {
     name: "Billing",

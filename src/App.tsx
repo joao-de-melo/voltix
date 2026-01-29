@@ -31,6 +31,8 @@ import { OrganizationSettingsIndexPage } from "@/pages/settings/organization";
 import { GeneralSettingsPage } from "@/pages/settings/organization/general";
 import { BillingSettingsPage } from "@/pages/settings/organization/billing";
 import { BrandingSettingsPage } from "@/pages/settings/organization/branding";
+import { TeamSettingsPage } from "@/pages/settings/organization/team";
+import { InviteAcceptPage } from "@/pages/invite-accept";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -52,6 +54,9 @@ function App() {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/onboarding" element={<OnboardingPage />} />
+
+              {/* Semi-public routes (require auth but not org membership) */}
+              <Route path="/invite/:token" element={<InviteAcceptPage />} />
 
               {/* Protected routes */}
               <Route path="/" element={<AppLayout />}>
@@ -89,6 +94,7 @@ function App() {
                   <Route path="general" element={<GeneralSettingsPage />} />
                   <Route path="billing" element={<BillingSettingsPage />} />
                   <Route path="branding" element={<BrandingSettingsPage />} />
+                  <Route path="team" element={<TeamSettingsPage />} />
                 </Route>
 
                 {/* Settings index redirect */}
